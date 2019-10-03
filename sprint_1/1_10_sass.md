@@ -168,6 +168,60 @@ En este [codepen](https://codepen.io/adalab/pen/JOqQGG) podéis verlo funcionand
 
 ***
 
+###  Sass & BEM. Una bonita pareja
+
+Seguro que a estas alturas del temario ya habéis visto todas las ventajas que ofrece SASS para trabajar con CSS, y por eso, podéis imaginaros como era el mundo antes de SASS si no escribías tus hojas de estilo de manera ordenada… CAÓTICO.
+
+Al afrontar proyectos de gran envergadura tu hoja de estilos crecía sin parar, pudiendo repetir nombres de clases, llenar tu css de `!important` por todas partes… en fin, convertir los estilos de tu proyecto en algo bastante difícil de mantener.
+
+Por todo esto, aparecieron algunas convenciones de trabajo con CSS que intentaron minimizar el problema: OOCSS (Object Oriented CSS), SMACSS (Scalable and Modular Architecture CSS) y BEM (Block Element Modifier), esta última es la que os explicaremos, ya que encaja perfectamente con la manera de trabajar en SASS y es una de las más extendidas.
+
+### ¿Pero qué es BEM?
+
+Pues un marco de trabajo con CSS que hace que nuestro código quede limpio, ordenado y sobre todo, fácil de entender y mantener. Su base es tan sencilla como nombrar cada clase que creamos en base a tres elementos.
+
+**B-(Block)** Bloque contenedor principal del elemento al que queremos dar estilo
+**E-(Element)** Elemento al que queremos dar estilo
+**M-(Modifier)** Modificador de nuestro elemento
+
+Pero vamos a por un ejemplo para verlo claro.
+
+Supongamos que tenemos que crear tres botones en nuestro header. Uno llevaría los estilos por defecto de todos los botones de nuestra web, otro sería un botón de “success” con sus estilos propios y el último sería una variante del botón más pequeña. 
+
+¿Cómo resolveríamos esta nomenclatura de CSS en nuestro HTML? Pues así:
+
+```html
+<header class='header'>
+	<button  class="header__button"></button>
+	<button  class="header__button--success"></button>
+	<button  class="header__button--small"></button>
+</header>
+```
+Siendo `.header` nuestro contenedor principal o “Block”, `button`  nuestro elemento principal “element”
+y `success / small`  nuestros *modifiers*.
+
+Como puedes ver, para unir estos tres elementos utilizamos doble guión bajo y doble guión medio en todos los casos.
+```css 
+.header__button--small {}
+```
+¿Y cómo traducimos esto a SCSS con SASS?
+
+Pues gracias a la anidación o *nesting* de los elementos y a los selectores madre (&).
+```scss
+/***SCSS***/
+.header {
+	&__button{
+		&--success {}
+	}
+}
+
+/****PRECOMPIPLED CSS****/
+.header {}
+.header__button {}
+.header__button--success {}
+```
+Como ya sabéis el selector `&` aplica estilos específicos a una etiqueta anidada dentro de un selector madre. Esto hace que el marco de trabajo que nos ofrece BEM sea el ideal para trabajar con SASS, pudiendo crear hojas de estilo limpias y ordenadas, así que a partir de ahora, las adalabers utilizaremos BEM para nombrar nuestras etiquetas y dar estilo a nuestros proyectos. Veréis qué fácil se hace mantener el código y encontrar selectores concretos a medida que crece nuestro código ;)
+
 #### EJERCICIO 2
 
 **Sass y BEM, cuanto más primo más me arrimo**
