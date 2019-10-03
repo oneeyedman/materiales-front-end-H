@@ -139,8 +139,6 @@ Esto nos generará el siguiente CSS:
 El anidado nos permite anidar bloques asimilándose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado.
 Una buena regla es, cuando vayamos añadir un cuarto nivel de anidación, pararnos a repensar si realmente es necesario. Pero con el uso iremos viendo cuándo usarlo y cuándo no ;)
 
-> **NOTA**: El anidado es algo que podemos hacer, no que debamos hacer. Lo ideal es tener un buen sistema de nombrado de clases para no tener que encadenar estilos salvo en contadas ocasiones. Si queréis saber más sobre el tema podéis buscar sistemas de nombrado de clases como [BEM](http://getbem.com) o [SMACSS](https://smacss.com).
-
 ### Referenciando al selector padre o madre: `&`
 ¡Pero no todo es tener cuidado! Una de las ventajas que nos ofrece el anidado es poder referenciar al selector padre o madre. Por ejemplo: queremos que los enlaces de nuestra página sean rojos, y el hover en azul, pero los enlaces del footer deben ser naranjas con el hover en verde.
 ```scss
@@ -167,6 +165,60 @@ a:hover {color: blue;}
 En este [codepen](https://codepen.io/adalab/pen/JOqQGG) podéis verlo funcionando.
 
 ***
+
+###  SASS & BEM. Una bonita pareja
+
+Seguro que a estas alturas del temario ya habéis visto todas las ventajas que ofrece SASS para trabajar con CSS, y por eso, podéis imaginaros como era el mundo antes de SASS si no escribías tus hojas de estilo de manera ordenada… CAÓTICO.
+
+Al afrontar proyectos de gran envergadura tu hoja de estilos crecía sin parar, pudiendo repetir nombres de clases, llenar tu css de `!important` por todas partes… en fin, convertir los estilos de tu proyecto en algo bastante difícil de mantener.
+
+Por todo esto, aparecieron algunas convenciones de trabajo con CSS que intentaron minimizar el problema: OOCSS (Object Oriented CSS), SMACSS (Scalable and Modular Architecture CSS) y BEM (Block Element Modifier), esta última es la que os explicaremos, ya que encaja perfectamente con la manera de trabajar en SASS y es una de las más extendidas.
+
+### ¿Pero qué es BEM?
+
+Pues un marco de trabajo con CSS que hace que nuestro código quede limpio, ordenado y sobre todo, fácil de entender y mantener. La idea de la que parte es tan sencilla como nombrar cada clase que creamos en base a tres elementos:
+
+**B-(Block)** Bloque contenedor principal del elemento al que queremos dar estilo
+**E-(Element)** Elemento al que queremos dar estilo
+**M-(Modifier)** Modificador de nuestro elemento
+
+Pero vamos a por un ejemplo para verlo claro.
+
+Supongamos que tenemos que crear tres botones en nuestro `header`. Uno llevaría los estilos por defecto de todos los botones de nuestra web, otro sería un botón de “success” con sus estilos propios y el último sería una variante del botón más pequeña. 
+
+¿Cómo resolveríamos esta nomenclatura de CSS en nuestro HTML? Pues así:
+
+```html
+<header class='header'>
+   <button class="header__button"></button>
+   <button class="header__button--success"></button>
+   <button class="header__button--small"></button>
+</header>
+```
+Siendo `.header` nuestro contenedor principal o “block”, `button` nuestro elemento principal “element”
+y `success / small` nuestros *modifiers*.
+
+Como puedes ver, para unir estos tres elementos utilizamos doble guión bajo y doble guión medio en todos los casos.
+```css 
+.header__button--small {}
+```
+¿Y cómo traducimos esto a SCSS con SASS?
+
+Pues gracias a la anidación o *nesting* de los elementos y a los selectores madre (&).
+```scss
+/***SCSS***/
+.header {
+   &__button{
+      &--success {}
+   }
+}
+
+/****PRECOMPILED CSS****/
+.header {}
+.header__button {}
+.header__button--success {}
+```
+Como ya sabéis el selector `&` aplica estilos específicos a una etiqueta anidada dentro de un selector madre. Esto hace que el marco de trabajo que nos ofrece BEM sea el ideal para trabajar con SASS, pudiendo crear hojas de estilo limpias y ordenadas, así que a partir de ahora, las adalabers utilizaremos BEM para nombrar nuestras etiquetas y dar estilo a nuestros proyectos. Veréis qué fácil se hace mantener nuestra css y encontrar selectores concretos a medida que crece nuestro código ;)
 
 #### EJERCICIO 2
 
