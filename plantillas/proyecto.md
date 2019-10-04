@@ -11,26 +11,21 @@
 1. Consejos
 1. Recursos
 
-
 ## Resumen ([TL;DR](https://spanish.stackexchange.com/questions/15317/hay-alg%C3%BAn-equivalente-en-castellano-al-ingl%C3%A9s-tldr))
 
 {{summary}}
-
 
 ## Objetivos
 
 {{objectives}}
 
-
 ## Caso de uso
 
 {{usecases}}
 
-
 ## Especificaciones
 
 {{specifications}}
-
 
 ## Hitos
 
@@ -41,10 +36,10 @@ Os proponemos una serie de hitos como sugerencia para dividir las fases de este 
 - {{milestone.duration}}
 - {{milestone.tasks}}
 
-
 ## Entrega
 
 El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab. El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
+
 - Nombre de la promoción en minúsculas
 - "m" minúscula seguida del número del módulo
 - Nombre del equipo en minúsculas
@@ -64,13 +59,11 @@ Por último, para acompañar a la entrega del proyecto, el equipo realizará una
 
 Al final de esta presentación habrá un turno breve de preguntas, de manera informal, tanto por parte de otras compañeras como por parte de los profesores.
 
-
 ## Consejos
 
 ### {{advice.title}}
 
 {{advice.info}}
-
 
 ## Recursos
 

@@ -4,16 +4,13 @@
 
 [{{kahoot.name}}]({{kahoot.url}})
 
-
 ## Comunicados importantes
 
 {{news_info}}
 
-
 ## ¿Qué hemos visto hasta ahora?
 
 {{previous_content_info}}
-
 
 ## ¿Qué vamos a ver hoy?
 
@@ -23,7 +20,6 @@
 
 {{session_content_url}}
 
-
 ## Repaso de la sesión
 
 {{session_summary}}
@@ -31,7 +27,6 @@
 ### Espacio para preguntar dudas
 
 {{questions_to_do}}
-
 
 ## Comunicados para el siguiente día
 
