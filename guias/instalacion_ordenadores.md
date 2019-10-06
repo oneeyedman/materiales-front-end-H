@@ -53,7 +53,7 @@ Para más información [consultar esta página](https://joshtronic.com/2018/05/0
 Desde **Mac** ejecutad las siguiente línea en la terminal de una en una:
 
 ```bash
-brew install node@6
+brew install node@10
 ```
 
 Una vez terminada la instalación debemos comprobar que todo ha ido bien. Para ello ejecutaremos en la terminal la siguiente línea:
