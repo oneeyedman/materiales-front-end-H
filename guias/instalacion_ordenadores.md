@@ -38,22 +38,44 @@ También encontramos otras incompatibilidades de hardware (ordenador) con Ubuntu
 
 Una vez preparado el sistema, instalaremos algunos programas para el curso. En Ubuntu los podemos instalar con la interfaz visual (instalador de programas) o desde la terminal usando `apt-get install`. En Mac, recomendamos usar [homebrew](https://brew.sh/) para instalar desde la terminal.
 
-Programas a instalar:
+### Instalación de Node JS
 
-- git, versión 2.x (https://git-scm.com/downloads)
-- nodejs, versión 10.x LTS (https://nodejs.org/en/)
+Desde **Ubuntu** ejecutad las siguientes líneas en la terminal de una en una:
 
-Para instalar la versión 10 en ubuntu 18, [seguid este tutorial](https://joshtronic.com/2018/05/08/how-to-install-nodejs-10-on-ubuntu-1804-lts/).
+```bash
+sudo apt install curl
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt install nodejs
+```
 
-Para comprobar que se ha instalado bien, ejecutar desde la terminal:
+Para más información [consultar esta página](https://joshtronic.com/2018/05/08/how-to-install-nodejs-10-on-ubuntu-1804-lts/).
 
-`node --version`
+Desde **Mac** ejecutad las siguiente línea en la terminal de una en una:
 
-La versión de node debe ser la 10.x
+```bash
+brew install node@6
+```
 
-`git --version`
+Una vez terminada la instalación debemos comprobar que todo ha ido bien. Para ello ejecutaremos en la terminal la siguiente línea:
 
-La versión de git debe ser la 2.x
+```bash
+node --version
+```
+
+Y la terminal debe mostrar la versión de Node JS instalada, algo como `v10.14.0`.
+Si por el contrario la terminal muestra el mensaje `No se ha encontrado la orden «node»...` es que algo hemos hecho mal.
+
+### Instalación de Git
+
+Queremos instalar la versión 2.x, para lo cual debemos seguir el [manual de esta página](https://git-scm.com/downloads).
+
+También debemos comprobar que Git se ha instalado correctamente la versión 2.x escribiendo en la terminal la siguiente línea:
+
+```bash
+git --version
+```
+
+### Otros programas
 
 Desde el instalador visual, podremos instalar el resto (última versión de todos):
 
