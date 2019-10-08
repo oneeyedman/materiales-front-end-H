@@ -84,7 +84,7 @@ Conoce más sobre este tipo de etiquetas en [https://developers.google.com/web/f
 
 ¡Vamos a practicar!
 
-**EJERCICIO 1**
+#### EJERCICIO 1
 La empresa Bacon Yummy tiene una página anticuada que no sigue ninguna pauta de accesibilidad y semántica web, así que está perdiendo cada semana un montón de usuarios y clientes potenciales que ya no comprarán bacon para sus pizzas. Nos ha encargado reestructurar la semántica y accesibilidad de su web y nos ha dado su HTML, así que ¡vamos a ello!
 
 ```html
