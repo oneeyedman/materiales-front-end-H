@@ -25,6 +25,6 @@ Para usarlo en un proyecto, tenéis que
 ](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - una vez configurado, al abrir un fichero JS en Atom o Code nos aparecen los errores y warnings, y para los errores solucionables, un botón para resolverlo.
 
-![Linter Atom](../sprint_2/assets/images/2-12/linter-atom.png)
+![Linter Atom](../sprint_2/assets/images/2-10/linter-atom.png)
 
 A veces nos resultará molesto tener algunos errores o warnings en el editor porque, por ejemplo, queremos usar un console.log para algo. Podemos deshabilitar el uso del linter en una línea concreta usando [las instrucciones de configuración](https://eslint.org/docs/user-guide/configuring).
